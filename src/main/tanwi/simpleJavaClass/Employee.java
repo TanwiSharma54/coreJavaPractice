@@ -45,6 +45,7 @@ public class Employee implements Comparable<Employee> {
                 ", lastname='" + lastname + '\'' +
                 '}';
     }
+    //All the above implementations of Comparator interface are anonymous classes.
     public static Comparator<Employee> EmployeeIdComparator = new Comparator<Employee>() {
         @Override
         public int compare(Employee e1, Employee e2) {
