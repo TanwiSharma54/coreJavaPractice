@@ -1,12 +1,14 @@
 package tanwi.simpleJavaClass;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class TestFunctionalInterface {
     public static void main(String args[]) {
         MyFirstFunctionalInterface sum = (a, b) -> a + b;
         System.out.println("Result: "+sum.twoNumbers(12, 100));
+
         List<Employee> myList = new ArrayList<>();
         Employee emp1 = new Employee(13,"Vivan", "Sharma");
         Employee emp2 = new Employee(1,"Xavir", "Alli");
@@ -23,6 +25,7 @@ public class TestFunctionalInterface {
             System.out.print("|");
             System.out.println(emp.getLastname());
         }
+
         //implementing java8 forEach method
         System.out.println("Implementing forEach Method");
         myList.forEach(Employee -> {
@@ -32,5 +35,18 @@ public class TestFunctionalInterface {
             System.out.print("|");
             System.out.println(Employee.getLastname());
         });
+
+        //implementing comparable<Employee> interface function compareTo(Employee emp)
+        Collections.sort(myList);
+        //implementing comparable Interface
+        System.out.println("Implementing comparable Interface");
+        myList.forEach(Employee -> {
+            System.out.print(Employee.getEmpId());
+            System.out.print("|");
+            System.out.print(Employee.getFirstName());
+            System.out.print("|");
+            System.out.println(Employee.getLastname());
+        });
+
     }
 }

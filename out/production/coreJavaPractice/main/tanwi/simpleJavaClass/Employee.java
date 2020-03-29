@@ -1,6 +1,6 @@
 package tanwi.simpleJavaClass;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
     private int empId;
     private String firstName;
     private String lastname;
@@ -42,5 +42,9 @@ public class Employee {
                 ", firstName='" + firstName + '\'' +
                 ", lastname='" + lastname + '\'' +
                 '}';
+    }
+    @Override
+    public int compareTo(Employee employee) {
+        return(this.empId - employee.empId);
     }
 }
