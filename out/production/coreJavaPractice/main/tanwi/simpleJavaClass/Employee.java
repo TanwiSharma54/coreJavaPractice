@@ -1,6 +1,8 @@
 package tanwi.simpleJavaClass;
 
-public class Employee implements Comparable<Employee>{
+import java.util.Comparator;
+
+public class Employee implements Comparable<Employee> {
     private int empId;
     private String firstName;
     private String lastname;
@@ -43,6 +45,24 @@ public class Employee implements Comparable<Employee>{
                 ", lastname='" + lastname + '\'' +
                 '}';
     }
+    public static Comparator<Employee> EmployeeIdComparator = new Comparator<Employee>() {
+        @Override
+        public int compare(Employee e1, Employee e2) {
+            return e1.getEmpId()-(e2.getEmpId());
+        }
+    };
+    public static Comparator<Employee> EmployeeFirstNameComparator = new Comparator<Employee>() {
+        @Override
+        public int compare(Employee o1, Employee o2) {
+            return o1.getFirstName().compareTo(o2.getFirstName());
+        }
+    };
+    public static Comparator<Employee> LastNameComparator = new Comparator<Employee>() {
+        @Override
+        public int compare(Employee o1, Employee o2) {
+            return o1.getLastname().compareTo(o2.getLastname());
+        }
+    };
     @Override
     public int compareTo(Employee employee) {
         return(this.empId - employee.empId);
