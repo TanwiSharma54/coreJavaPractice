@@ -38,10 +38,8 @@ public class TestFunctionalInterface {
             System.out.println(Employee.getLastname());
         });
 
-        //implementing comparable<Employee> interface function compareTo(Employee emp)
-        Collections.sort(myList);
-        //implementing comparable Interface
-        System.out.println("Implementing comparable Interface");
+        //implementing comparable functional interface as lambda expression
+        myList.sort((emp5, emp6) -> emp5.getFirstName().compareTo(emp6.getFirstName()));
         myList.forEach(Employee -> {
             System.out.print(Employee.getEmpId());
             System.out.print("|");
@@ -50,5 +48,25 @@ public class TestFunctionalInterface {
             System.out.println(Employee.getLastname());
         });
 
+        System.out.println("Sort by employee id");
+        myList.sort((empTest1,empTest2) -> empTest1.getEmpId() - empTest2.getEmpId());
+        myList.forEach(Employee -> {
+            System.out.print(Employee.getEmpId());
+            System.out.print("|");
+            System.out.print(Employee.getFirstName());
+            System.out.print("|");
+            System.out.println(Employee.getLastname());
+        });
+
+        System.out.println("Sort by employee Last name");
+        myList.sort((empLastname1, empLatname2)-> empLastname1.getLastname()
+                .compareTo(empLatname2.getLastname()));
+        myList.forEach(Employee -> {
+            System.out.print(Employee.getEmpId());
+            System.out.print("|");
+            System.out.print(Employee.getFirstName());
+            System.out.print("|");
+            System.out.println(Employee.getLastname());
+        });
     }
 }

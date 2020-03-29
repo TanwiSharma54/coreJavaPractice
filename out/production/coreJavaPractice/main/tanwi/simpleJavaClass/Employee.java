@@ -2,7 +2,7 @@ package tanwi.simpleJavaClass;
 
 import java.util.Comparator;
 
-public class Employee implements Comparable<Employee> {
+public class Employee {
     private int empId;
     private String firstName;
     private String lastname;
@@ -45,6 +45,8 @@ public class Employee implements Comparable<Employee> {
                 ", lastname='" + lastname + '\'' +
                 '}';
     }
+    //All the above implementations of Comparator interface are anonymous classes.
+    //https://www.journaldev.com/996/java-inner-class
     public static Comparator<Employee> EmployeeIdComparator = new Comparator<Employee>() {
         @Override
         public int compare(Employee e1, Employee e2) {
@@ -63,8 +65,5 @@ public class Employee implements Comparable<Employee> {
             return o1.getLastname().compareTo(o2.getLastname());
         }
     };
-    @Override
-    public int compareTo(Employee employee) {
-        return(this.empId - employee.empId);
-    }
+
 }
