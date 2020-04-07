@@ -7,10 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  <a href="TimePkg.jsp">Java 8 Date/Time</a>
-  </body>
+<head>
+    <title>DateTime</title>
+</head>
+<body>
+<h1>Java 8 Java.Time package</h1>
+<form action="StreamPracticeController" method="GET">
+<input type="submit" value="ShowServletmessage"/>
+</form>
+</body>
 </html>
