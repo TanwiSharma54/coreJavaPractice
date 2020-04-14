@@ -1,19 +1,18 @@
 <%--
   Created by IntelliJ IDEA.
   User: tanwisharma
-  Date: 06/04/20
-  Time: 6:30 PM
+  Date: 08/04/20
+  Time: 9:24 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>DateTime</title>
+    <title>Java8LambdaExpressionWithFunctionInterface</title>
 </head>
 <body>
-<h1>Java 8 Java.Time package</h1>
-<form action="Jav8DateTimeApiPracController" method="GET">
-<input type="submit" value="ShowDateTimeServletmessage"/>
+<form action="LambdaPracticeController" method="GET">
+    <input type="submit" value="DisplayLamda/FunctionalInterfaceResult">
 </form>
 </body>
 </html>

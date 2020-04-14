@@ -1,0 +1,13 @@
+body {
+    background-color: powderblue;
+
+}
+h1 {
+    font-family: verdana;
+    font-size: 300%;
+}
+#newTable {
+    font-family: courier;
+    font-size: 300%;
+    border: 1px;
+}

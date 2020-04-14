@@ -12,8 +12,8 @@
 </head>
 <body>
 <h1>Java 8 Java.Time package</h1>
-<form action="StreamPracticeController" method="GET">
-<input type="submit" value="ShowServletmessage"/>
+<form action="Jav8DateTimeApiPracController" method="GET">
+<input type="submit" value="ShowDateTimeServletmessage"/>
 </form>
 </body>
 </html>

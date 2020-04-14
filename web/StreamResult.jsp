@@ -1,19 +1,18 @@
 <%--
   Created by IntelliJ IDEA.
   User: tanwisharma
-  Date: 06/04/20
-  Time: 6:30 PM
+  Date: 07/04/20
+  Time: 5:05 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>DateTime</title>
+    <title>Stream Api result</title>
+    <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
-<h1>Java 8 Java.Time package</h1>
-<form action="Jav8DateTimeApiPracController" method="GET">
-<input type="submit" value="ShowDateTimeServletmessage"/>
-</form>
+<h1>Stream API result</h1>
+${myListOfEmplyee}
 </body>
 </html>

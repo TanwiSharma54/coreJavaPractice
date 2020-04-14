@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -29,17 +28,42 @@ public class StreamPracticeController extends HttpServlet{
         myList.add(emp3);
         myList.add(emp4);
         String st = "hello";
-        myList.sort(Comparator.comparing(Employee::getFirstName));
-        String msg = "Hi It is working fine";
-        //request.setAttribute("myListOfEmplyee", msg);
-        //String url = "/index.jsp";
-        //RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        //dispatcher.forward(request, response);
-        response.setContentType("text/html");
-             PrintWriter out = response.getWriter();
-            out.println("<HTML><HEAD><TITLE>Hello World!</TITLE>"+
-                    "</HEAD><BODY>Hello World!</BODY></HTML>");
-            out.close();
+        //comparable interface
+        myList.sort((empL1, empL2)-> empL1.getFirstName().compareTo(empL2.getFirstName()));
+        System.out.println("Sort by employee First Name");
+        myList.forEach(Employee -> {
+            System.out.print(Employee.getEmpId());
+            System.out.print("|");
+            System.out.print(Employee.getFirstName());
+            System.out.print("|");
+            System.out.println(Employee.getLastname());
+        });
+
+        //comparator interface using lambda expression
+        myList.sort(Comparator.comparing(employee -> employee.getLastname()));
+        System.out.println("Sort by employee Last Name");
+        myList.forEach(Employee -> {
+            System.out.print(Employee.getEmpId());
+            System.out.print("|");
+            System.out.print(Employee.getFirstName());
+            System.out.print("|");
+            System.out.println(Employee.getLastname());
+        });
+
+        //comparator using method reference
+        myList.sort(Comparator.comparing(Employee::getEmpId));
+        System.out.println("Sort by employee id");
+        myList.forEach(Employee -> {
+            System.out.print(Employee.getEmpId());
+            System.out.print("|");
+            System.out.print(Employee.getFirstName());
+            System.out.print("|");
+            System.out.println(Employee.getLastname());
+        });
+        request.setAttribute("myListOfEmplyee", myList);
+        String url = "/StreamResult.jsp";
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+        dispatcher.forward(request, response);
     }
 
 }
